@@ -1,5 +1,7 @@
 # An Easy-to-Deploy Product Defect Detection System with End-Edge-Cloud Collaboration
 
+<iframe src="figs/video.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 ## Introductiion
 
 An Easy-to-Deploy Product Defect Detection system (E2D-PDD) with end-edge-cloud collaboration is developed to defect the detection of product in industrial scenarios. 
@@ -43,6 +45,9 @@ This makes the deployment of PDD detection units in complex industrial scenarios
 Finally, the negative detection results are sent to PLC to sort out the unqualified products. 
 
 ![Hardware System](figs/Hardware_System.jpg)
+
+
+
 
 
 <video id="video" controls="" preload="none" poster="corner">
