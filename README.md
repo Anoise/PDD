@@ -13,8 +13,6 @@ An Easy-to-Deploy Product Defect Detection system (E2D-PDD) with end-edge-cloud 
   - E2D-PDD offers a 5\% improvement in detection accuracy over current state-of-the-art (SOTA) models and an average 64\% reduction in detection time.
   - Two PDD datasets of AC manufacturing (SDU-Haier-AQD and SDU-Haier-ND) are open sourced to accelerate related research progress.
 
-[//]: # (<img src="https://github.com/liangdaojun/MHCE/blob/main/Images/MHCE.jpg">)   
-
 ![E2D-PDD System](figs/E2D_PDD_Arch.jpg)
 
 
@@ -29,7 +27,7 @@ Considering together with the \``where are the defects'' problem existing in ima
 - E2DNet is a lightweight network architecture that can be deployed on Raspberry Pi. 
 
 [//]: # ( ![The architecture of E2DNet]&#40;figs/E2DNet.jpg&#41;)
-<div align=center><img src="figs/E2DNet_Arch.jpg"></div>
+<div align=center><img src="figs/E2DNet_Arch.jpg", width="800"></div>
 
 ## ACDO algorithm for End-Edge-Could Collaboration
 
