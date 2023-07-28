@@ -1,12 +1,13 @@
-# An Easy-to-Deploy Product Defect Detection System with End-Edge-Cloud Collaboration
+# An Easy-to-Deploy Product Defect Detection (E2D-PDD) System with End-Edge-Cloud Collaboration
 
-<div align=center><img src="figs/E2D_PDD_Video.gif" width="800"></div>
 
 ## Introductiion
 
 An Easy-to-Deploy Product Defect Detection system (E2D-PDD) with end-edge-cloud collaboration is developed to defect the detection of product in industrial scenarios. 
 
-*The main contributions are summarized as follows:*
+<div align=center><img src="figs/E2D_PDD_Video.gif" width="1000"></div>
+
+**The main contributions are summarized as follows:**
   - An Easy-to-Deploy lightweight defect detection Network (E2DNet) is proposed that can solve the different detection problems in a unified model.
   - An Easy-to-Deploy PDD (E2D-PDD) system with end-edge-cloud collaboration are proposed to accelerate the detection speed of edge nodes, which realizes the plug-and-play of edge nodes while improving the detection speed.
   - E2D-PDD offers a 5\% improvement in detection accuracy over current state-of-the-art (SOTA) models and an average 64\% reduction in detection time.
@@ -47,12 +48,27 @@ Finally, the negative detection results are sent to PLC to sort out the unqualif
 ![Hardware System](figs/Hardware_System.jpg)
 
 
+## Experiments 
+
+### AAD tasks
+E2DNet achieves the best performance and fast runing speed compared to other SOTA models, realizing
+the best trade-off between performance and speed. 
+As shown in following figure, the performance (mAP), runing speed (FLOPs) and model size (parameters, indicated by bubble size) comparisons of different SOTA models on AAD tasks. 
+
+<div align=center><img src="figs/mAP_AAD.jpg" width="800"></div>
 
 
+### ADD tasks
 
-<video id="video" controls="" preload="none" poster="corner">
-      <source id="mp4" src="figs/video.mp4" type="video/mp4">
-</video>
+The average mAP of E2DNet is much better than that of other lightweight object detection models. 
+As shown in following figure,  mAP of different models when IoU ≥ 0.75.
 
-## Experiments
+<div align=center><img src="figs/mAP75_ADD.jpg" width="800"></div>
 
+<div align=center><img src="figs/mAP_11_ADD.jpg" width="800"></div>
+
+### Performance of ACDO Algorithms
+
+AAD and ADD tasks with 3 priorities reach the lowest delay at different time intervals when ACDO is adopted. 
+
+<div align=center><img src="figs/EEC_Perform.jpg"></div>
