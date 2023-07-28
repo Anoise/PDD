@@ -1,6 +1,6 @@
 # An Easy-to-Deploy Product Defect Detection System with End-Edge-Cloud Collaboration
 
-<iframe src="//player.bilibili.com/player.html?aid=944583285&bvid=BV1UW4y1j7Gg&cid=875050848&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<div align=center><img src="figs/E2D_PDD_Video.gif" width="800"></div>
 
 ## Introductiion
 
