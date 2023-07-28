@@ -33,6 +33,27 @@ Considering together with the \``where are the defects'' problem existing in ima
 [//]: # ( ![The architecture of E2DNet]&#40;figs/E2DNet.jpg&#41;)
 <div align=center><img src="figs/E2DNet_Arch.jpg", width="800"></div>
 
+### An easy start instance
+
+1. Configure Darknet environment to accelerate E2DNet, the details of the configuration can refer to [this](https://github.com/AlexeyAB/darknet).
+  
+2. Make dataset directory like this:
+    - train (directory)
+      - xx1.jpg (image sample)
+      - xx1.txt (description file)
+      - xx2.jpg (image sample)
+      - xx2.txt (description file)
+      - ......
+
+3. Run the following code for training
+```python
+./darknet detector train ./dataconfigs/ok.data ./configs/e2dnet.cfg ./configs/e2dnet_best.weights
+```
+4. Run the following code for testing
+```python
+./darknet detector test ./dataconfigs/ok.data ./configs/e2dnet.cfg ./configs/e2dnet_best.weights
+```
+
 ## ACDO algorithm for End-Edge-Could Collaboration
 
 An Actor-Critic based Dynamic Offloading (ACDO) is designed to reduce the overall delay of E2DNet on end devices.
@@ -41,6 +62,7 @@ They are connected with Raspberry Pi, an end device deployed with E2DNet, to for
 In this end-edge-cloud collaboration scenario, the cloud has abundant computing capabilities but is far away from the end devices, and the edge servers are relatively close to the end devices but need to be connected to the end device via 5G network. 
 
 <div align=center><img src="figs/EEC_System.jpg" width="600"></div>
+
 
 ## E2D-PDD System Implementation
 
