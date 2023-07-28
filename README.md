@@ -33,7 +33,7 @@ Considering together with the \``where are the defects'' problem existing in ima
 [//]: # ( ![The architecture of E2DNet]&#40;figs/E2DNet.jpg&#41;)
 <div align=center><img src="figs/E2DNet_Arch.jpg", width="800"></div>
 
-### An easy start instance
+### An easy starting instance
 
 1. Configure Darknet environment to accelerate E2DNet, the details of the configuration can refer to [this](https://github.com/AlexeyAB/darknet).
   
