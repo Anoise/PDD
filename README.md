@@ -5,7 +5,7 @@
 
 An Easy-to-Deploy Product Defect Detection system (E2D-PDD) with end-edge-cloud collaboration is developed to defect the detection of product in industrial scenarios. 
 
-<div align=center><img src="figs/E2D_PDD_Video.gif" width="1000"></div>
+<div align=center><img src="figs/E2D_PDD_Video.gif" width="800"></div>
 
 **The main contributions are summarized as follows:**
   - An Easy-to-Deploy lightweight defect detection Network (E2DNet) is proposed that can solve the different detection problems in a unified model.
@@ -15,7 +15,8 @@ An Easy-to-Deploy Product Defect Detection system (E2D-PDD) with end-edge-cloud 
 
 [//]: # (<img src="https://github.com/liangdaojun/MHCE/blob/main/Images/MHCE.jpg">)   
 
- ![E2D-PDD System](figs/E2D_PDD_Arch.jpg)
+![E2D-PDD System](figs/E2D_PDD_Arch.jpg)
+
 
 ## E2DNet
 
@@ -27,7 +28,8 @@ Considering together with the \``where are the defects'' problem existing in ima
 - Numerous shortcut path is added between the feature maps in UD modules to reduce model over-fitting；
 - E2DNet is a lightweight network architecture that can be deployed on Raspberry Pi. 
 
- ![The architecture of E2DNet](figs/E2DNet.jpg)
+[//]: # ( ![The architecture of E2DNet]&#40;figs/E2DNet.jpg&#41;)
+<div align=center><img src="figs/E2DNet_Arch.jpg"></div>
 
 ## ACDO algorithm for End-Edge-Could Collaboration
 
@@ -36,7 +38,7 @@ Ultrasonic sensors, scanners and cameras are used to obtain the location, type a
 They are connected with Raspberry Pi, an end device deployed with E2DNet, to form a closed-loop process of perception, decision-making and control. 
 In this end-edge-cloud collaboration scenario, the cloud has abundant computing capabilities but is far away from the end devices, and the edge servers are relatively close to the end devices but need to be connected to the end device via 5G network. 
 
-![The architecture of E2DNet](figs/EEC_System.jpg)
+<div align=center><img src="figs/EEC_System.jpg" width="600"></div>
 
 ## E2D-PDD System Implementation
 
@@ -55,7 +57,7 @@ E2DNet achieves the best performance and fast runing speed compared to other SOT
 the best trade-off between performance and speed. 
 As shown in following figure, the performance (mAP), runing speed (FLOPs) and model size (parameters, indicated by bubble size) comparisons of different SOTA models on AAD tasks. 
 
-<div align=center><img src="figs/mAP_AAD.jpg" width="800"></div>
+<div align=center><img src="figs/mAP_AAD.jpg" width="600"></div>
 
 
 ### ADD tasks
@@ -63,9 +65,9 @@ As shown in following figure, the performance (mAP), runing speed (FLOPs) and mo
 The average mAP of E2DNet is much better than that of other lightweight object detection models. 
 As shown in following figure,  mAP of different models when IoU ≥ 0.75.
 
-<div align=center><img src="figs/mAP75_ADD.jpg" width="800"></div>
+<div align=center><img src="figs/mAP75_ADD.jpg" width="600"></div>
 
-<div align=center><img src="figs/mAP_11_ADD.jpg" width="800"></div>
+<div align=center><img src="figs/mAP_11_ADD.jpg" width="600"></div>
 
 ### Performance of ACDO Algorithms
 
