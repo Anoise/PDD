@@ -1,41 +1,41 @@
-# An Easy-to-Deploy Product Defect Detection (E2D-PDD) System with End-Edge-Cloud Collaboration
+# FlexPDD: Flexibly Deployable Product Defect Detection System
 
 
 ## Introductiion
 
 Product Defect Detection (PDD) exists in many processes of industrial product production, which is an important workflow to sort out unqualified products. We focus on the PDD problem at multiple production stages, each of which produces specific data types and requires strict product quality control. 
-In this work, we developed an Easy-to-Deploy Product Defect Detection system (E2D-PDD) with end-edge-cloud collaboration to defect the detection of product in industrial scenarios. 
+In this work, we developed an Flexibly deployable Product Defect Detection system (FlexPDD) with end-edge-cloud collaboration to defect the detection of product in industrial scenarios. 
 
 <div align=center><img src="figs/E2D_PDD_Video.gif" width="800"></div>
 
 Specifically, Audio Anomaly Detection (AAD) existed in Air Conditioner (AC) internal units and Appearance Defect Detection (ADD) raised in AC external units are a very important and time-consuming quality control process. 
 This greatly restricts the beat of the assembly line, which in turn leads to a reduction in production efficiency. 
-To solve this problem, we developed an Easy-to-Deploy PDD (E2D-PDD) system with End-Edge-Cloud (EEC) collaboration to accelerate the detection speed of edge nodes.
+To solve this problem, we developed an Flexibly deployable PDD (FlexPDD) system with End-Edge-Cloud (EEC) collaboration to accelerate the detection speed of edge nodes.
 
-![E2D-PDD System](figs/E2D_PDD_Arch.jpg)
+![FlexPDD System](figs/E2D_PDD_Arch.jpg)
 
 **The main contributions are summarized as follows:**
-  - An Easy-to-Deploy lightweight defect detection Network (E2DNet) is proposed that can solve the different detection problems in a unified model.
-  - An Easy-to-Deploy PDD (E2D-PDD) system with end-edge-cloud collaboration are proposed to accelerate the detection speed of edge nodes, which realizes the plug-and-play of edge nodes while improving the detection speed.
-  - E2D-PDD offers a 5\% improvement in detection accuracy over current state-of-the-art (SOTA) models and an average 64\% reduction in detection time.
+  - An lightweight defect detection Network (Light2D) is proposed that can solve the different detection problems in a unified model.
+  - An Flexibly deployable PDD (FlexPDD) system with end-edge-cloud collaboration are proposed to accelerate the detection speed of edge nodes, which realizes the plug-and-play of edge nodes while improving the detection speed.
+  - FlexPDD offers a 5\% improvement in detection accuracy over current state-of-the-art (SOTA) models and an average 64\% reduction in detection time.
   - Two PDD datasets of AC manufacturing (SDU-Haier-AQD and SDU-Haier-ND) are open sourced to accelerate related research progress.
 
-## E2DNet
+## Light2D
 
-Considering together with the \``where are the defects'' problem existing in image type, we propose a Easy-to-Deploy defect detection Network (E2DNet) that can solve the \``what'' and \``where'' detection problems in a unified network. 
+Considering together with the \``where are the defects'' problem existing in image type, we propose a Easy-to-Deploy defect detection Network (Light2D) that can solve the \``what'' and \``where'' detection problems in a unified network. 
 
-**The innovations of E2DNet include:** 
+**The innovations of Light2D include:** 
 - A Up-Down (UD) module is designed to quickly obtain feature maps of various sizes; 
 - The lightweight deep architecture can be easily obtained by stacking UD module;
 - Numerous shortcut path is added between the feature maps in UD modules to reduce model over-fitting；
-- E2DNet is a lightweight network architecture that can be deployed on Raspberry Pi. 
+- Light2D is a lightweight network architecture that can be deployed on Raspberry Pi. 
 
-[//]: # ( ![The architecture of E2DNet]&#40;figs/E2DNet.jpg&#41;)
-<div align=center><img src="figs/E2DNet_Arch.jpg", width="800"></div>
+[//]: # ( ![The architecture of Light2D]&#40;figs/Light2D.jpg&#41;)
+<div align=center><img src="figs/Light2D_Arch.jpg", width="800"></div>
 
 ### An easy starting instance
 
-1. Configure Darknet environment to accelerate E2DNet, the details of the configuration can refer to [this](https://github.com/AlexeyAB/darknet).
+1. Configure Darknet environment to accelerate Light2D, the details of the configuration can refer to [this](https://github.com/AlexeyAB/darknet).
   
 2. Make dataset directory like this:
     - train (directory)
@@ -47,26 +47,26 @@ Considering together with the \``where are the defects'' problem existing in ima
 
 3. Run the following code for training
 ```python
-./darknet detector train ./dataconfigs/ok.data ./configs/e2dnet.cfg ./configs/e2dnet_best.weights
+./darknet detector train ./dataconfigs/ok.data ./configs/Light2D.cfg ./configs/Light2D_best.weights
 ```
 4. Run the following code for testing
 ```python
-./darknet detector test ./dataconfigs/ok.data ./configs/e2dnet.cfg ./configs/e2dnet_best.weights
+./darknet detector test ./dataconfigs/ok.data ./configs/Light2D.cfg ./configs/Light2D_best.weights
 ```
 
 ## ACDO algorithm for End-Edge-Could Collaboration
 
-An Actor-Critic based Dynamic Offloading (ACDO) is designed to reduce the overall delay of E2DNet on end devices.
+An Actor-Critic based Dynamic Offloading (ACDO) is designed to reduce the overall delay of Light2D on end devices.
 Ultrasonic sensors, scanners and cameras are used to obtain the location, type and appearance of AC, respectively. 
-They are connected with Raspberry Pi, an end device deployed with E2DNet, to form a closed-loop process of perception, decision-making and control. 
+They are connected with Raspberry Pi, an end device deployed with Light2D, to form a closed-loop process of perception, decision-making and control. 
 In this end-edge-cloud collaboration scenario, the cloud has abundant computing capabilities but is far away from the end devices, and the edge servers are relatively close to the end devices but need to be connected to the end device via 5G network. 
 
 <div align=center><img src="figs/EEC_System.jpg" width="600"></div>
 
 
-## E2D-PDD System Implementation
+## FlexPDD System Implementation
 
-We built an assembly line for industrial production detection to implement the E2D-PDD system with end-edge-cloud collaboration. In this E2D-PDD system, Raspberry Pi (4B) is used as the edge node to connect end devices such as ultrasonic sensors, scanners and cameras to realize low-cost and flexible deployment of the PDD algorithm.
+We built an assembly line for industrial production detection to implement the FlexPDD system with end-edge-cloud collaboration. In this FlexPDD system, Raspberry Pi (4B) is used as the edge node to connect end devices such as ultrasonic sensors, scanners and cameras to realize low-cost and flexible deployment of the PDD algorithm.
 Subsequently, the edge nodes are connected to the cloud via 5G to offload and schedule PDD tasks to further improve the speed of the detection algorithm. 
 This makes the deployment of PDD detection units in complex industrial scenarios with high convenience and low cost.
 Finally, the negative detection results are sent to PLC to sort out the unqualified products. 
@@ -103,7 +103,7 @@ The number of categories of the 16 detected objects is shown in the following ta
 ## Experiments 
 
 ### AAD tasks
-E2DNet achieves the best performance and fast runing speed compared to other SOTA models, realizing
+Light2D achieves the best performance and fast runing speed compared to other SOTA models, realizing
 the best trade-off between performance and speed. 
 As shown in following figure, the performance (mAP), runing speed (FLOPs) and model size (parameters, indicated by bubble size) comparisons of different SOTA models on AAD tasks. 
 
@@ -112,7 +112,7 @@ As shown in following figure, the performance (mAP), runing speed (FLOPs) and mo
 
 ### ADD tasks
 
-The average mAP of E2DNet is much better than that of other lightweight object detection models. 
+The average mAP of Light2D is much better than that of other lightweight object detection models. 
 As shown in following figure,  mAP of different models when IoU ≥ 0.75.
 
 <div align=center><img src="figs/mAP75_ADD.jpg" width="600"></div>
