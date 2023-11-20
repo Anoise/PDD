@@ -1,23 +1,23 @@
-# FlexPDD: Flexibly Deployable Product Defect Detection System
+# Fast and Flexible Product Defect Detection System
 
 
 ## Introductiion
 
 Product Defect Detection (PDD) exists in many processes of industrial product production, which is an important workflow to sort out unqualified products. We focus on the PDD problem at multiple production stages, each of which produces specific data types and requires strict product quality control. 
-In this work, we developed an Flexibly deployable Product Defect Detection system (FlexPDD) with end-edge-cloud collaboration to defect the detection of product in industrial scenarios. 
+In this work, we developed an Flexibly deployable Product Defect Detection system (FFPDD) with end-edge-cloud collaboration to defect the detection of product in industrial scenarios. 
 
 <div align=center><img src="figs/E2D_PDD_Video.gif" width="800"></div>
 
 Specifically, Audio Anomaly Detection (AAD) existed in Air Conditioner (AC) internal units and Appearance Defect Detection (ADD) raised in AC external units are a very important and time-consuming quality control process. 
 This greatly restricts the beat of the assembly line, which in turn leads to a reduction in production efficiency. 
-To solve this problem, we developed an Flexibly deployable PDD (FlexPDD) system with End-Edge-Cloud (EEC) collaboration to accelerate the detection speed of edge nodes.
+To solve this problem, we developed an Flexibly deployable PDD (FFPDD) system with End-Edge-Cloud (EEC) collaboration to accelerate the detection speed of edge nodes.
 
-![FlexPDD System](figs/E2D_PDD_Arch.jpg)
+![FFPDD System](figs/E2D_PDD_Arch.jpg)
 
 **The main contributions are summarized as follows:**
   - An lightweight defect detection Network (Light2D) is proposed that can solve the different detection problems in a unified model.
-  - An Flexibly deployable PDD (FlexPDD) system with end-edge-cloud collaboration are proposed to accelerate the detection speed of edge nodes, which realizes the plug-and-play of edge nodes while improving the detection speed.
-  - FlexPDD offers a 5\% improvement in detection accuracy over current state-of-the-art (SOTA) models and an average 64\% reduction in detection time.
+  - An Flexibly deployable PDD (FFPDD) system with end-edge-cloud collaboration are proposed to accelerate the detection speed of edge nodes, which realizes the plug-and-play of edge nodes while improving the detection speed.
+  - FFPDD offers a 1.2\% improvement in detection accuracy over current state-of-the-art (SOTA) models and an average 64\% reduction in detection time.
   - Two PDD datasets of AC manufacturing (SDU-Haier-AQD and SDU-Haier-ND) are open sourced to accelerate related research progress.
 
 ## Light2D
@@ -64,9 +64,9 @@ In this end-edge-cloud collaboration scenario, the cloud has abundant computing 
 <div align=center><img src="figs/EEC_System.jpg" width="600"></div>
 
 
-## FlexPDD System Implementation
+## FFPDD System Implementation
 
-We built an assembly line for industrial production detection to implement the FlexPDD system with end-edge-cloud collaboration. In this FlexPDD system, Raspberry Pi (4B) is used as the edge node to connect end devices such as ultrasonic sensors, scanners and cameras to realize low-cost and flexible deployment of the PDD algorithm.
+We built an assembly line for industrial production detection to implement the FFPDD system with end-edge-cloud collaboration. In this FFPDD system, Raspberry Pi (4B) is used as the edge node to connect end devices such as ultrasonic sensors, scanners and cameras to realize low-cost and flexible deployment of the PDD algorithm.
 Subsequently, the edge nodes are connected to the cloud via 5G to offload and schedule PDD tasks to further improve the speed of the detection algorithm. 
 This makes the deployment of PDD detection units in complex industrial scenarios with high convenience and low cost.
 Finally, the negative detection results are sent to PLC to sort out the unqualified products. 
