@@ -47,7 +47,9 @@ Considering together with the \``where are the defects'' problem existing in ima
 
 3. Run the following code for training,
 
-   cd Light2D and run
+```
+   cd Light2D
+```
 ```python
 ./darknet detector train ./dataconfigs/ok.data ./configs/Light2D.cfg ./configs/Light2D_best.weights
 ```
