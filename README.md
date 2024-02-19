@@ -30,7 +30,6 @@ Considering together with the \``where are the defects'' problem existing in ima
 - Numerous shortcut path is added between the feature maps in U-Nets to reduce model over-fitting；
 - Light2D is a lightweight network architecture that can be deployed on Raspberry Pi.
 
-[//]: # ( ![The architecture of Light2D]&#40;figs/Light2D.jpg&#41;)
 <div align=center><img src="figs/Light2D_Arch.jpg", width="800"></div>
 
 ## 3. An easy starting instance
