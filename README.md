@@ -33,11 +33,11 @@ Considering together with the \``where are the defects'' problem existing in ima
 [//]: # ( ![The architecture of Light2D]&#40;figs/Light2D.jpg&#41;)
 <div align=center><img src="figs/Light2D_Arch.jpg", width="800"></div>
 
-### An easy starting instance
+## 3. An easy starting instance
 
-1. Configure Darknet environment to accelerate Light2D, the details of the configuration can refer to [this](https://github.com/AlexeyAB/darknet).
+1) Configure Darknet environment to accelerate Light2D, the details of the configuration can refer to [this](https://github.com/AlexeyAB/darknet).
   
-2. Make dataset directory like this:
+2) Make dataset directory like this:
     - train (directory)
       - xx1.jpg (image sample)
       - xx1.txt (description file)
@@ -45,7 +45,7 @@ Considering together with the \``where are the defects'' problem existing in ima
       - xx2.txt (description file)
       - ......
 
-3. Run the following code for training,
+3) Run the following code for training,
 
 ```
    cd Light2D
@@ -53,12 +53,12 @@ Considering together with the \``where are the defects'' problem existing in ima
 ```python
 ./darknet detector train ./dataconfigs/ok.data ./configs/Light2D.cfg ./configs/Light2D_best.weights
 ```
-4. Run the following code for testing
+4) Run the following code for testing
 ```python
 ./darknet detector test ./dataconfigs/ok.data ./configs/Light2D.cfg ./configs/Light2D_best.weights
 ```
 
-## 3. ACDO algorithm for End-Edge-Could Collaboration
+## 4. ACDO algorithm for End-Edge-Could Collaboration
 
 An Actor-Critic based Dynamic Offloading (ACDO) is designed to reduce the overall delay of Light2D on end devices.
 Ultrasonic sensors, scanners and cameras are used to obtain the location, type and appearance of AC, respectively. 
@@ -68,7 +68,7 @@ In this end-edge-cloud collaboration scenario, the cloud has abundant computing 
 <div align=center><img src="figs/EEC_System.jpg" width="600"></div>
 
 
-## 4. PDD System Implementation
+## 5. PDD System Implementation
 
 We built an assembly line for industrial production detection to implement the PDD system with end-edge-cloud collaboration. In this PDD system, Raspberry Pi (4B) is used as the edge node to connect end devices such as ultrasonic sensors, scanners and cameras to realize low-cost and flexible deployment of the PDD algorithm.
 Subsequently, the edge nodes are connected to the cloud via 5G to offload and schedule PDD tasks to further improve the speed of the detection algorithm. 
@@ -77,7 +77,7 @@ Finally, the negative detection results are sent to PLC to sort out the unqualif
 
 ![Hardware System](figs/Hardware_System.jpg)
 
-## 5. Open Source Datasets
+## 6. Open Source Datasets
 
 ### AAD dataset
 The initially sampled AAD data in AC internal unit is saved as `wav' files, and the sampling frequency of the audio signal is 48kHz. To efficiently utilize these audio files, the long piece of audio is splited into many frames and each of them is converted into the 2D spectrogram by SG-Gram algorithm. Therefore, the AAD dataset is a multi-label image detection dataset, which includes 562 training samples and 142 test samples. 
@@ -104,7 +104,7 @@ The number of categories of the 16 detected objects is shown in the following ta
 <div align=center><img src="figs/ADD_Dataset_Fig.png" width="600"></div>
 
 
-## 6. Experiments 
+## 7. Experiments 
 
 ### AAD tasks
 Light2D achieves the best performance and fast runing speed compared to other SOTA models, realizing
@@ -123,7 +123,7 @@ As shown in following figure,  mAP of different models when IoU ≥ 0.75.
 
 <div align=center><img src="figs/mAP_11_ADD.jpg" width="600"></div>
 
-## 7. Performance of ACDO Algorithms
+## 8. Performance of ACDO Algorithms
 
 AAD and ADD tasks with 3 priorities reach the lowest delay at different time intervals when ACDO is adopted. 
 
