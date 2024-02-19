@@ -6,13 +6,13 @@
 Product Defect Detection (PDD) exists in many processes of industrial product production, which is an important workflow to sort out unqualified products. We focus on the PDD problem at multiple production stages, each of which produces specific data types and requires strict product quality control. 
 In this work, we developed a lightweight PDD (Light2D) method with end-edge-cloud collaboration to defect the detection of product in industrial scenarios. 
 
-<div align=center><img src="figs/E2D_PDD_Video.gif" width="800"></div>
+<div align=center><img src="figs/PDD_Video.gif" width="800"></div>
 
 Specifically, Audio Anomaly Detection (AAD) existed in Air Conditioner (AC) internal units and Appearance Defect Detection (ADD) raised in AC external units are a very important and time-consuming quality control process. 
 This greatly restricts the beat of the assembly line, which in turn leads to a reduction in production efficiency. 
 To solve this problem, we developed a lightweight PDD (Light2D) method with End-Edge-Cloud (EEC) collaboration to accelerate the detection speed of edge nodes.
 
-![FFPDD System](figs/E2D_PDD_Arch.jpg)
+![FFPDD System](figs/PDD_Arch.jpg)
 
 **The main contributions are summarized as follows:**
   - An lightweight defect detection Network (Light2D) with cascaded U-Net architecture is proposed that can solve the different detection problems in a unified model.
@@ -30,7 +30,6 @@ Considering together with the \``where are the defects'' problem existing in ima
 - Numerous shortcut path is added between the feature maps in U-Nets to reduce model over-fitting；
 - Light2D is a lightweight network architecture that can be deployed on Raspberry Pi.
 
-[//]: # ( ![The architecture of Light2D]&#40;figs/Light2D.jpg&#41;)
 <div align=center><img src="figs/Light2D_Arch.jpg", width="800"></div>
 
 ## 3. An easy starting instance
@@ -79,7 +78,7 @@ Finally, the negative detection results are sent to PLC to sort out the unqualif
 
 ## 6. Open Source Datasets
 
-### AAD dataset
+### 1) AAD dataset
 The initially sampled AAD data in AC internal unit is saved as `wav' files, and the sampling frequency of the audio signal is 48kHz. To efficiently utilize these audio files, the long piece of audio is splited into many frames and each of them is converted into the 2D spectrogram by SG-Gram algorithm. Therefore, the AAD dataset is a multi-label image detection dataset, which includes 562 training samples and 142 test samples. 
 
 - We open-sourced the audio dataset with annotation files [here](https://ieee-dataport.org/documents/sdu-haier-nd-dataset-noise-detection).
@@ -89,7 +88,7 @@ The initially sampled AAD data in AC internal unit is saved as `wav' files, and 
 
 
 
-### ADD dataset
+### 2) ADD dataset
 The ADD dataset includes 9401 training samples and 1408 testing samples.
 There are totally 11 types of this dataset, each type has about 1000 images. 
 This dataset contains 16 classes of objects to be detected, and each type contains a different number of classes. 
@@ -106,7 +105,7 @@ The number of categories of the 16 detected objects is shown in the following ta
 
 ## 7. Experiments 
 
-### AAD tasks
+### 1) AAD tasks
 Light2D achieves the best performance and fast runing speed compared to other SOTA models, realizing
 the best trade-off between performance and speed. 
 As shown in following figure, the performance (mAP), runing speed (FLOPs) and model size (parameters, indicated by bubble size) comparisons of different SOTA models on AAD tasks. 
@@ -114,7 +113,7 @@ As shown in following figure, the performance (mAP), runing speed (FLOPs) and mo
 <div align=center><img src="figs/mAP_AAD.jpg" width="600"></div>
 
 
-### ADD tasks
+### 2) ADD tasks
 
 The average mAP of Light2D is much better than that of other lightweight object detection models. 
 As shown in following figure,  mAP of different models when IoU ≥ 0.75.
