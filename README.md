@@ -6,13 +6,13 @@
 Product Defect Detection (PDD) exists in many processes of industrial product production, which is an important workflow to sort out unqualified products. We focus on the PDD problem at multiple production stages, each of which produces specific data types and requires strict product quality control. 
 In this work, we developed a lightweight PDD (Light2D) method with end-edge-cloud collaboration to defect the detection of product in industrial scenarios. 
 
-<div align=center><img src="figs/E2D_PDD_Video.gif" width="800"></div>
+<div align=center><img src="figs/PDD_Video.gif" width="800"></div>
 
 Specifically, Audio Anomaly Detection (AAD) existed in Air Conditioner (AC) internal units and Appearance Defect Detection (ADD) raised in AC external units are a very important and time-consuming quality control process. 
 This greatly restricts the beat of the assembly line, which in turn leads to a reduction in production efficiency. 
 To solve this problem, we developed a lightweight PDD (Light2D) method with End-Edge-Cloud (EEC) collaboration to accelerate the detection speed of edge nodes.
 
-![FFPDD System](figs/E2D_PDD_Arch.jpg)
+![FFPDD System](figs/PDD_Arch.jpg)
 
 **The main contributions are summarized as follows:**
   - An lightweight defect detection Network (Light2D) with cascaded U-Net architecture is proposed that can solve the different detection problems in a unified model.
