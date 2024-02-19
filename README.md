@@ -45,7 +45,8 @@ Considering together with the \``where are the defects'' problem existing in ima
       - xx2.txt (description file)
       - ......
 
-3. Run the following code for training
+3. Run the following code for training,
+
    cd Light2D and run
 ```python
 ./darknet detector train ./dataconfigs/ok.data ./configs/Light2D.cfg ./configs/Light2D_best.weights
