@@ -4,37 +4,37 @@
 ## 1. Introductiion 
 
 Product Defect Detection (PDD) exists in many processes of industrial product production, which is an important workflow to sort out unqualified products. We focus on the PDD problem at multiple production stages, each of which produces specific data types and requires strict product quality control. 
-In this work, we developed a lightweight PDD (Light2D) method with end-edge-cloud collaboration to defect the detection of product in industrial scenarios. 
+In this work, we developed a lightweight PDD (RasPiDets) method with end-edge-cloud collaboration to defect the detection of product in industrial scenarios. 
 
 <div align=center><img src="figs/PDD_Video.gif" width="800"></div>
 
 Specifically, Audio Anomaly Detection (AAD) existed in Air Conditioner (AC) internal units and Appearance Defect Detection (ADD) raised in AC external units are a very important and time-consuming quality control process. 
 This greatly restricts the beat of the assembly line, which in turn leads to a reduction in production efficiency. 
-To solve this problem, we developed a lightweight PDD (Light2D) method with End-Edge-Cloud (EEC) collaboration to accelerate the detection speed of edge nodes.
+To solve this problem, we developed a lightweight PDD (RasPiDets) method with End-Edge-Cloud (EEC) collaboration to accelerate the detection speed of edge nodes.
 
 ![FFPDD System](figs/PDD_Arch.jpg)
 
 **The main contributions are summarized as follows:**
-  - An lightweight defect detection Network (Light2D) with cascaded U-Net architecture is proposed that can solve the different detection problems in a unified model.
-  - A lightweight PDD (Light2D) method system with end-edge-cloud collaboration are proposed to accelerate the detection speed of edge nodes, which realizes the plug-and-play of edge nodes while improving the detection speed.
+  - An lightweight defect detection Network (RasPiDets) with cascaded U-Net architecture is proposed that can solve the different detection problems in a unified model.
+  - A lightweight PDD (RasPiDets) method system with end-edge-cloud collaboration are proposed to accelerate the detection speed of edge nodes, which realizes the plug-and-play of edge nodes while improving the detection speed.
   - FFPDD offers a **1.2%** improvement in detection accuracy over current state-of-the-art (SOTA) models and an average **64%** reduction in detection time.
   - Two PDD datasets of AC manufacturing (SDU-Haier-AQD and SDU-Haier-ND) are open sourced to accelerate related research progress.
 
-## 2. Light2D
+## 2. RasPiDets
 
-Considering together with the \``where are the defects'' problem existing in image type, we propose a Easy-to-Deploy defect detection Network (Light2D) that can solve the \``what'' and \``where'' detection problems in a unified network. 
+Considering together with the \``where are the defects'' problem existing in image type, we propose a Easy-to-Deploy defect detection Network (RasPiDets) that can solve the \``what'' and \``where'' detection problems in a unified network. 
 
-**The innovations of Light2D include:** 
+**The innovations of RasPiDets include:** 
 - A cascaded U-Net architecture is designed to quickly obtain feature maps of various sizes; 
 - The lightweight deep architecture can be easily obtained by stacking U-Nets;
 - Numerous shortcut path is added between the feature maps in U-Nets to reduce model over-fitting；
-- Light2D is a lightweight network architecture that can be deployed on Raspberry Pi.
+- RasPiDets is a lightweight network architecture that can be deployed on Raspberry Pi.
 
-<div align=center><img src="figs/Light2D_Arch.jpg", width="800"></div>
+<div align=center><img src="figs/RasPiDets_Arch.jpg", width="800"></div>
 
 ## 3. An easy starting instance
 
-1) Configure Darknet environment to accelerate Light2D, the details of the configuration can refer to [this](https://github.com/AlexeyAB/darknet).
+1) Configure Darknet environment to accelerate RasPiDets, the details of the configuration can refer to [this](https://github.com/AlexeyAB/darknet).
   
 2) Make dataset directory like this:
     - train (directory)
@@ -47,21 +47,21 @@ Considering together with the \``where are the defects'' problem existing in ima
 3) Run the following code for training,
 
 ```
-   cd Light2D
+   cd RasPiDets
 ```
 ```python
-./darknet detector train ./dataconfigs/ok.data ./configs/Light2D.cfg ./configs/Light2D_best.weights
+./darknet detector train ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
 ```
 4) Run the following code for testing
 ```python
-./darknet detector test ./dataconfigs/ok.data ./configs/Light2D.cfg ./configs/Light2D_best.weights
+./darknet detector test ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
 ```
 
 ## 4. ACDO algorithm for End-Edge-Could Collaboration
 
-An Actor-Critic based Dynamic Offloading (ACDO) is designed to reduce the overall delay of Light2D on end devices.
+An Actor-Critic based Dynamic Offloading (ACDO) is designed to reduce the overall delay of RasPiDets on end devices.
 Ultrasonic sensors, scanners and cameras are used to obtain the location, type and appearance of AC, respectively. 
-They are connected with Raspberry Pi, an end device deployed with Light2D, to form a closed-loop process of perception, decision-making and control. 
+They are connected with Raspberry Pi, an end device deployed with RasPiDets, to form a closed-loop process of perception, decision-making and control. 
 In this end-edge-cloud collaboration scenario, the cloud has abundant computing capabilities but is far away from the end devices, and the edge servers are relatively close to the end devices but need to be connected to the end device via 5G network. 
 
 <div align=center><img src="figs/EEC_System.jpg" width="600"></div>
@@ -106,7 +106,7 @@ The number of categories of the 16 detected objects is shown in the following ta
 ## 7. Experiments 
 
 ### 1) AAD tasks
-Light2D achieves the best performance and fast runing speed compared to other SOTA models, realizing
+RasPiDets achieves the best performance and fast runing speed compared to other SOTA models, realizing
 the best trade-off between performance and speed. 
 As shown in following figure, the performance (mAP), runing speed (FLOPs) and model size (parameters, indicated by bubble size) comparisons of different SOTA models on AAD tasks. 
 
@@ -115,7 +115,7 @@ As shown in following figure, the performance (mAP), runing speed (FLOPs) and mo
 
 ### 2) ADD tasks
 
-The average mAP of Light2D is much better than that of other lightweight object detection models. 
+The average mAP of RasPiDets is much better than that of other lightweight object detection models. 
 As shown in following figure,  mAP of different models when IoU ≥ 0.75.
 
 <div align=center><img src="figs/mAP75_ADD.jpg" width="600"></div>
