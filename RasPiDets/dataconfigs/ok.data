@@ -1,5 +1,5 @@
 classes=16
-train = /home/dl/Python4/E2DNet/dataconfigs/train.txt
-valid = /home/dl/Python4/E2DNet/dataconfigs/val.txt
-names = /home/dl/Python4/E2DNet/dataconfigs/classs.names
+train = /home/dl/Python4/Light2D/dataconfigs/train.txt
+valid = /home/dl/Python4/Light2D/dataconfigs/val.txt
+names = /home/dl/Python4/Light2D/dataconfigs/classs.names
 backup = backup/
