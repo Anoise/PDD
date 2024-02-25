@@ -1,4 +1,4 @@
-# Fast and Flexible Product Defect Detection System
+# RasPiDets: A Real-Time Defect Detection Method with End-Edge-Cloud Collaboration
 
 
 ## 1. Introductiion 
