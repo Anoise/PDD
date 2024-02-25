@@ -52,6 +52,11 @@ Considering together with the \``where are the defects'' problem existing in ima
 ```python
 ./darknet detector train ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
 ```
+4) Run the following code for validation
+```
+./darknet detector valid ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
+```
+
 4) Run the following code for testing
 ```python
 ./darknet detector test ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
