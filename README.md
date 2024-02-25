@@ -57,7 +57,7 @@ Considering together with the \``where are the defects'' problem existing in ima
 ./darknet detector valid ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
 ```
 
-4) Run the following code for testing
+5) Run the following code for testing
 ```python
 ./darknet detector test ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
 ```
