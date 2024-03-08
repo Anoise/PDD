@@ -1,8 +1,8 @@
 # RasPiDets: A Real-Time Defect Detection Method with End-Edge-Cloud Collaboration
 
 **Contents**
-- [1.Introductiion](##1.Introductiion)
-
+- [1.Introductiion](#1.Introductiion)
+- [2.RasPiDets](#2.RasPiDets)
 
 <a name="1.Introductiion"></a>
 ## 1. Introductiion
@@ -24,6 +24,7 @@ To solve this problem, we developed a lightweight PDD (RasPiDets) method with En
   - FFPDD offers a **1.2%** improvement in detection accuracy over current state-of-the-art (SOTA) models and an average **64%** reduction in detection time.
   - Two PDD datasets of AC manufacturing (SDU-Haier-AQD and SDU-Haier-ND) are open sourced to accelerate related research progress.
 
+<a name="2.RasPiDets"></a>
 ## 2. RasPiDets
 
 Considering together with the \``where are the defects'' problem existing in image type, we propose a Easy-to-Deploy defect detection Network (RasPiDets) that can solve the \``what'' and \``where'' detection problems in a unified network. 
