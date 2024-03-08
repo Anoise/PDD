@@ -78,9 +78,9 @@ Considering together with the \``where are the defects'' problem existing in ima
 ./darknet detector test ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
 ```
 
-6) Visualization of network architecture
+6) Visualization of network architecture (Zoom Out)
 
-<div align=center><img src="figs/RasPiDetsV1-H-Simple.png" width="600"></div>
+<div align=center><img src="figs/RasPiDetsV1-H-Simple.png"></div>
 
 <a name="4.ACDO"></a>
 ## 4. ACDO algorithm for End-Edge-Could Collaboration
@@ -138,11 +138,11 @@ The number of categories of the 16 detected objects is shown in the following ta
 
 ### 1) STE 
 
-<div align=center><img src="figs/ExAAD.jpg" width="600"></div>
+<div align=center><img src="figs/ExAAD.jpg"></div>
 
 ### 2) Other Audio Anomaly Detection Algorithms
 
-<div align=center><img src="figs/ExAAD_Other.jpg" width="400"></div>
+<div align=center><img src="figs/ExAAD_Other.jpg"></div>
 
 <a name="8.Loss"></a>
 ## 8. Loss Function
@@ -151,7 +151,7 @@ The number of categories of the 16 detected objects is shown in the following ta
 
 <div align=center><img src="figs/Ressgion.jpg" width="400"></div>
 
-<div align=center><img src="figs/LossCIoU.jpg" width="200"></div>
+<div align=center><img src="figs/LossCIoU.jpg" width="400"></div>
 
 <a name="9.Experiments"></a>
 ## 9. Experiments 
@@ -182,5 +182,5 @@ AAD and ADD tasks with 3 priorities reach the lowest delay at different time int
 <a name="11.Vis_Results"></a>
 ## 11. Visualization of detection results
 
-<div align=center><img src="figs/Results.jpg"></div>
+<div align=center><img src="figs/Results.jpg" width="600"></div>
 
