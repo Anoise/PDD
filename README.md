@@ -1,7 +1,18 @@
-# Fast and Flexible Product Defect Detection System
+# RasPiDets: A Real-Time Defect Detection Method with End-Edge-Cloud Collaboration
+
+**Contents**
+- [1.Introductiion](#1.Introductiion)
+- [2.RasPiDets](#2.RasPiDets)
+- [3.An easy starting instance](#3.starting_instance)
+- [4.ACDO algorithm for End-Edge-Could Collaboration](#4.ACDO)
+- [5.PDD System Implementation](#5.System)
+- [6.Datasets](#6.Datasets)
+- [7.Experiments](#7.Experiments)
+- [8.Performance](#8.Performance)
 
 
-## 1. Introductiion 
+<a name="1.Introductiion"></a>
+## 1. Introductiion
 
 Product Defect Detection (PDD) exists in many processes of industrial product production, which is an important workflow to sort out unqualified products. We focus on the PDD problem at multiple production stages, each of which produces specific data types and requires strict product quality control. 
 In this work, we developed a lightweight PDD (RasPiDets) method with end-edge-cloud collaboration to defect the detection of product in industrial scenarios. 
@@ -20,6 +31,7 @@ To solve this problem, we developed a lightweight PDD (RasPiDets) method with En
   - FFPDD offers a **1.2%** improvement in detection accuracy over current state-of-the-art (SOTA) models and an average **64%** reduction in detection time.
   - Two PDD datasets of AC manufacturing (SDU-Haier-AQD and SDU-Haier-ND) are open sourced to accelerate related research progress.
 
+<a name="2.RasPiDets"></a>
 ## 2. RasPiDets
 
 Considering together with the \``where are the defects'' problem existing in image type, we propose a Easy-to-Deploy defect detection Network (RasPiDets) that can solve the \``what'' and \``where'' detection problems in a unified network. 
@@ -32,6 +44,7 @@ Considering together with the \``where are the defects'' problem existing in ima
 
 <div align=center><img src="figs/RasPiDets_Arch.jpg", width="800"></div>
 
+<a name="3.starting_instance"></a>
 ## 3. An easy starting instance
 
 1) Configure Darknet environment to accelerate RasPiDets, the details of the configuration can refer to [this](https://github.com/AlexeyAB/darknet).
@@ -52,11 +65,17 @@ Considering together with the \``where are the defects'' problem existing in ima
 ```python
 ./darknet detector train ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
 ```
-4) Run the following code for testing
+4) Run the following code for validation
+```
+./darknet detector valid ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
+```
+
+5) Run the following code for testing
 ```python
 ./darknet detector test ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
 ```
 
+<a name="4.ACDO"></a>
 ## 4. ACDO algorithm for End-Edge-Could Collaboration
 
 An Actor-Critic based Dynamic Offloading (ACDO) is designed to reduce the overall delay of RasPiDets on end devices.
@@ -67,6 +86,7 @@ In this end-edge-cloud collaboration scenario, the cloud has abundant computing 
 <div align=center><img src="figs/EEC_System.jpg" width="600"></div>
 
 
+<a name="5.System"></a>
 ## 5. PDD System Implementation
 
 We built an assembly line for industrial production detection to implement the PDD system with end-edge-cloud collaboration. In this PDD system, Raspberry Pi (4B) is used as the edge node to connect end devices such as ultrasonic sensors, scanners and cameras to realize low-cost and flexible deployment of the PDD algorithm.
@@ -76,6 +96,7 @@ Finally, the negative detection results are sent to PLC to sort out the unqualif
 
 ![Hardware System](figs/Hardware_System.jpg)
 
+<a name="6.Datasets"></a>
 ## 6. Open Source Datasets
 
 ### 1) AAD dataset
@@ -102,7 +123,7 @@ The number of categories of the 16 detected objects is shown in the following ta
 
 <div align=center><img src="figs/ADD_Dataset_Fig.png" width="600"></div>
 
-
+<a name="7.Experiments"></a>
 ## 7. Experiments 
 
 ### 1) AAD tasks
@@ -122,6 +143,7 @@ As shown in following figure,  mAP of different models when IoU ≥ 0.75.
 
 <div align=center><img src="figs/mAP_11_ADD.jpg" width="600"></div>
 
+<a name="8.Performance"></a>
 ## 8. Performance of ACDO Algorithms
 
 AAD and ADD tasks with 3 priorities reach the lowest delay at different time intervals when ACDO is adopted. 
