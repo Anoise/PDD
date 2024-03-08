@@ -5,6 +5,7 @@
 
 
 <a name="1.Introductiion"></a>
+## 1. Introductiion
 
 Product Defect Detection (PDD) exists in many processes of industrial product production, which is an important workflow to sort out unqualified products. We focus on the PDD problem at multiple production stages, each of which produces specific data types and requires strict product quality control. 
 In this work, we developed a lightweight PDD (RasPiDets) method with end-edge-cloud collaboration to defect the detection of product in industrial scenarios. 
