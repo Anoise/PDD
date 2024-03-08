@@ -1,5 +1,6 @@
 classes=16
 train = /home/dl/Python4/Light2D/dataconfigs/train.txt
 valid = /home/dl/Python4/Light2D/dataconfigs/val.txt
+test = /home/dl/Python4/Light2D/dataconfigs/val.txt
 names = /home/dl/Python4/Light2D/dataconfigs/classs.names
 backup = backup/
