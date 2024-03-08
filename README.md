@@ -7,8 +7,11 @@
 - [4.ACDO algorithm for End-Edge-Could Collaboration](#4.ACDO)
 - [5.PDD System Implementation](#5.System)
 - [6.Datasets](#6.Datasets)
-- [7.Experiments](#7.Experiments)
-- [8.Performance](#8.Performance)
+- [7.STE for Audio Extraction](#7.STE_Audio)
+- [8.Loss Function](#8.Loss)
+- [9.Experiments](#9.Experiments)
+- [10.Performance](#10.Performance)
+- [11.Visualization of detection results](#11.Vis_Results)
 
 
 <a name="1.Introductiion"></a>
@@ -75,6 +78,10 @@ Considering together with the \``where are the defects'' problem existing in ima
 ./darknet detector test ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
 ```
 
+6) Visualization of network architecture
+
+<div align=center><img src="figs/RasPiDetsV1-H-Simple.png" width="600"></div>
+
 <a name="4.ACDO"></a>
 ## 4. ACDO algorithm for End-Edge-Could Collaboration
 
@@ -99,7 +106,7 @@ Finally, the negative detection results are sent to PLC to sort out the unqualif
 <a name="6.Datasets"></a>
 ## 6. Open Source Datasets
 
-### 1) AAD dataset
+### 1) AAD Dataset
 The initially sampled AAD data in AC internal unit is saved as `wav' files, and the sampling frequency of the audio signal is 48kHz. To efficiently utilize these audio files, the long piece of audio is splited into many frames and each of them is converted into the 2D spectrogram by SG-Gram algorithm. Therefore, the AAD dataset is a multi-label image detection dataset, which includes 562 training samples and 142 test samples. 
 
 - We open-sourced the audio dataset with annotation files [here](https://ieee-dataport.org/documents/sdu-haier-nd-dataset-noise-detection).
@@ -109,7 +116,7 @@ The initially sampled AAD data in AC internal unit is saved as `wav' files, and 
 
 
 
-### 2) ADD dataset
+### 2) ADD Dataset
 The ADD dataset includes 9401 training samples and 1408 testing samples.
 There are totally 11 types of this dataset, each type has about 1000 images. 
 This dataset contains 16 classes of objects to be detected, and each type contains a different number of classes. 
@@ -123,18 +130,40 @@ The number of categories of the 16 detected objects is shown in the following ta
 
 <div align=center><img src="figs/ADD_Dataset_Fig.png" width="600"></div>
 
-<a name="7.Experiments"></a>
-## 7. Experiments 
+### 3) Statistics of Datasets
+<div align=center><img src="figs/Datasets.jpg" width="600"></div>
 
-### 1) AAD tasks
+<a name="7.STE_Audio"></a>
+## 7. STE for Audio Extraction
+
+### 1) STE 
+
+<div align=center><img src="figs/ExAAD.jpg" width="600"></div>
+
+### 2) Other Audio Anomaly Detection Algorithms
+
+<div align=center><img src="figs/ExAAD_Other.jpg" width="400"></div>
+
+<a name="8.Loss"></a>
+## 8. Loss Function
+
+<div align=center><img src="figs/Class_Loss.jpg" width="400"></div>
+
+<div align=center><img src="figs/Ressgion.jpg" width="400"></div>
+
+<div align=center><img src="figs/LossCIoU.jpg" width="200"></div>
+
+<a name="9.Experiments"></a>
+## 9. Experiments 
+
+### 1) AAD Tasks
 RasPiDets achieves the best performance and fast runing speed compared to other SOTA models, realizing
 the best trade-off between performance and speed. 
 As shown in following figure, the performance (mAP), runing speed (FLOPs) and model size (parameters, indicated by bubble size) comparisons of different SOTA models on AAD tasks. 
 
 <div align=center><img src="figs/mAP_AAD.jpg" width="600"></div>
 
-
-### 2) ADD tasks
+### 2) ADD Tasks
 
 The average mAP of RasPiDets is much better than that of other lightweight object detection models. 
 As shown in following figure,  mAP of different models when IoU ≥ 0.75.
@@ -143,9 +172,15 @@ As shown in following figure,  mAP of different models when IoU ≥ 0.75.
 
 <div align=center><img src="figs/mAP_11_ADD.jpg" width="600"></div>
 
-<a name="8.Performance"></a>
-## 8. Performance of ACDO Algorithms
+<a name="10.Performance"></a>
+## 10. Performance of ACDO Algorithms
 
 AAD and ADD tasks with 3 priorities reach the lowest delay at different time intervals when ACDO is adopted. 
 
 <div align=center><img src="figs/EEC_Perform.jpg"></div>
+
+<a name="11.Vis_Results"></a>
+## 11. Visualization of detection results
+
+<div align=center><img src="figs/Results.jpg"></div>
+
