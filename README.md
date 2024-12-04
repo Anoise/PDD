@@ -1,6 +1,6 @@
 # RasPiDets: A Real-Time Defect Detection Method with End-Edge-Cloud Collaboration
 
-**Contents**
+# **Contents**
 - [1.Introductiion](#1.Introductiion)
 - [2.RasPiDets](#2.RasPiDets)
 - [3.An easy starting instance](#3.starting_instance)
@@ -99,9 +99,13 @@ In the following list, symbol $\checkmark$ represents advantages, and symbol $\t
 ./darknet detector test ./dataconfigs/ok.data ./configs/RasPiDets.cfg ./configs/RasPiDets_best.weights
 ```
 
-6) Visualization of network architecture
+6) Visualization of network architecture (Zoom Out)
 
+<<<<<<< HEAD
 <div align=center><img src="figs/RasPiDetsV1-H-Simple.png" ></div>
+=======
+<div align=center><img src="figs/RasPiDetsV1-H-Simple.png"></div>
+>>>>>>> 2eefe86d6849868e1d41d56536cc3dc9e52497d2
 
 <a name="4.ACDO"></a>
 ## 4. ACDO algorithm for End-Edge-Could Collaboration
@@ -164,6 +168,7 @@ $$
 $$
 where $n$ is the size of the window, $x(n)$ is input signals, $\omega(n)$ is a rectangular window function.
 
+<<<<<<< HEAD
 <div align=center><img src="figs/ExAAD.jpg" ></div>
 *Short-Term Energy method (STE) for extracting valid audio clips. The solid red line in the waveform of audio indicates where a valid segment begins, and the solid blue line indicates where it ends.*
 
@@ -171,6 +176,13 @@ where $n$ is the size of the window, $x(n)$ is input signals, $\omega(n)$ is a r
 
 Comparisons of different anomaly detection methods for extracting valid audio clips.
 <div align=center><img src="figs/ExAAD_Other.jpg" ></div>
+=======
+<div align=center><img src="figs/ExAAD.jpg"></div>
+
+### 2) Other Audio Anomaly Detection Algorithms
+
+<div align=center><img src="figs/ExAAD_Other.jpg"></div>
+>>>>>>> 2eefe86d6849868e1d41d56536cc3dc9e52497d2
 
 <a name="8.Loss"></a>
 ## 8. Loss Function
@@ -210,5 +222,5 @@ AAD and ADD tasks with 3 priorities reach the lowest delay at different time int
 <a name="11.Vis_Results"></a>
 ## 11. Visualization of detection results
 
-<div align=center><img src="figs/Results.jpg"></div>
+<div align=center><img src="figs/Results.jpg" width="600"></div>
 
