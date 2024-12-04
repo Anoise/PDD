@@ -101,11 +101,7 @@ In the following list, symbol $\checkmark$ represents advantages, and symbol $\t
 
 6) Visualization of network architecture (Zoom Out)
 
-<<<<<<< HEAD
-<div align=center><img src="figs/RasPiDetsV1-H-Simple.png" ></div>
-=======
-<div align=center><img src="figs/RasPiDetsV1-H-Simple.png"></div>
->>>>>>> 2eefe86d6849868e1d41d56536cc3dc9e52497d2
+<div align=center><img src="figs/RasPiDetsV1-H-Simple.png" width=""></div>
 
 <a name="4.ACDO"></a>
 ## 4. ACDO algorithm for End-Edge-Could Collaboration
@@ -168,21 +164,13 @@ $$
 $$
 where $n$ is the size of the window, $x(n)$ is input signals, $\omega(n)$ is a rectangular window function.
 
-<<<<<<< HEAD
-<div align=center><img src="figs/ExAAD.jpg" ></div>
+<div align=center><img src="figs/ExAAD.jpg" width=""></div>
 *Short-Term Energy method (STE) for extracting valid audio clips. The solid red line in the waveform of audio indicates where a valid segment begins, and the solid blue line indicates where it ends.*
 
 ### 2) Other Audio Anomaly Detection Algorithms
 
 Comparisons of different anomaly detection methods for extracting valid audio clips.
-<div align=center><img src="figs/ExAAD_Other.jpg" ></div>
-=======
-<div align=center><img src="figs/ExAAD.jpg"></div>
-
-### 2) Other Audio Anomaly Detection Algorithms
-
-<div align=center><img src="figs/ExAAD_Other.jpg"></div>
->>>>>>> 2eefe86d6849868e1d41d56536cc3dc9e52497d2
+<div align=center><img src="figs/ExAAD_Other.jpg" width=""></div>
 
 <a name="8.Loss"></a>
 ## 8. Loss Function
