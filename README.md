@@ -49,19 +49,19 @@ Considering together with the \``where are the defects'' problem existing in ima
 
 In the following list, symbol $\checkmark$ represents advantages, and symbol $\times$ represents disadvantages.
 
-  1. DETR: This model is an encoder-decoder structure that adopts Transformer as its backbone.
+  1. **DETR**: This model is an encoder-decoder structure that adopts Transformer as its backbone.
   - $\checkmark$ It transforms the problem into a set prediction problem, simplifying the detection process.
   - $\times$ Its prediction performance suffers from inadequate utilization of multiscale features. For example, it has a lower mAP in small object recognition. In addition, it requires a longer training process. 
 
-  2. MobileNetv3: The model is a mobile network obtained via a neural architecture search (NAS) algorithm.
+  2. **MobileNetv3**: The model is a mobile network obtained via a neural architecture search (NAS) algorithm.
   - $\checkmark$ It searches for the optimal number of channels and filters. Moreover, it adds many effective modules, such as Squeeze-and-Excitation module (SE) and hard-swish activation function. 
   - $\times$ The absence of multiscale (MC) features and dense connections (DC), coupled with the heavy reliance on numerous deepwise convolutions, renders it inadequate in extracting multi-resolution features, consequently leading to a degraded performance in detecting small objects.
 
-  3. YOLO v3, v4 and v7: The design of the one-stage detection method enables faster detection speed, and larger resolution input improves its detection performance.
+  3. **YOLO v3, v4 and v7**: The design of the one-stage detection method enables faster detection speed, and larger resolution input improves its detection performance.
   - $\checkmark$ These are single-stage detection algorithms, and all have specially designed network structures and activation functions, e.g., DarkNet-53 and SiLU activation function.
   - $\times$ The network structure design is complex and there are numerous redundant features, which hinders its detection speed. In addition, the transfer of high-resolution features to later layers occurs at a slow pace, consequently leading to diminished detection accuracy for small target objects.
 
-  4. RasPiDets: A lightweight model that can run smoothly on Raspberry Pi (RasPiDets) is good at solving the audio and image detection problems. 
+  4. **RasPiDets**: A lightweight model that can run smoothly on Raspberry Pi (RasPiDets) is good at solving the audio and image detection problems. 
   - $\checkmark$  RasPiDets contains many efficient components, such as multiscale (MS), dense connections (DC), inverted modules (IM), MSFE and AMFF. 
   These components are crucial for enhancing performance and speed.
   - $\times$ The mAP of RasPiDets in specific categories is not uniformly optimal, such as in the categories of cyclone net. In addition, RasPiDets lacks the attention module's capacity for global feature modeling. 
