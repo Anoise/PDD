@@ -47,6 +47,27 @@ Considering together with the \``where are the defects'' problem existing in ima
 
 <div align=center><img src="figs/RasPiDets_Arch.jpg", width="800"></div>
 
+In the following list, symbol $\checkmark$ represents advantages, and symbol $\times$ represents disadvantages.
+
+  1. DETR: This model is an encoder-decoder structure that adopts Transformer as its backbone.
+  - $\checkmark$ It transforms the problem into a set prediction problem, simplifying the detection process.
+  - $\times$ Its prediction performance suffers from inadequate utilization of multiscale features. For example, it has a lower mAP in small object recognition. In addition, it requires a longer training process. 
+
+  2. MobileNetv3: The model is a mobile network obtained via a neural architecture search (NAS) algorithm.
+  - $\checkmark$ It searches for the optimal number of channels and filters. Moreover, it adds many effective modules, such as Squeeze-and-Excitation module (SE) and hard-swish activation function. 
+  - $\times$ The absence of multiscale (MC) features and dense connections (DC), coupled with the heavy reliance on numerous deepwise convolutions, renders it inadequate in extracting multi-resolution features, consequently leading to a degraded performance in detecting small objects.
+
+  3. YOLO v3, v4 and v7: The design of the one-stage detection method enables faster detection speed, and larger resolution input improves its detection performance.
+  - $\checkmark$ These are single-stage detection algorithms, and all have specially designed network structures and activation functions, e.g., DarkNet-53 and SiLU activation function.
+  - $\times$ The network structure design is complex and there are numerous redundant features, which hinders its detection speed. In addition, the transfer of high-resolution features to later layers occurs at a slow pace, consequently leading to diminished detection accuracy for small target objects.
+
+  4. RasPiDets: A lightweight model that can run smoothly on Raspberry Pi (RasPiDets) is good at solving the audio and image detection problems. 
+  - $\checkmark$  RasPiDets contains many efficient components, such as multiscale (MS), dense connections (DC), inverted modules (IM), MSFE and AMFF. 
+  These components are crucial for enhancing performance and speed.
+  - $\times$ The mAP of RasPiDets in specific categories is not uniformly optimal, such as in the categories of cyclone net. In addition, RasPiDets lacks the attention module's capacity for global feature modeling. 
+
+
+
 <a name="3.starting_instance"></a>
 ## 3. An easy starting instance
 
@@ -80,7 +101,7 @@ Considering together with the \``where are the defects'' problem existing in ima
 
 6) Visualization of network architecture
 
-<div align=center><img src="figs/RasPiDetsV1-H-Simple.png" width="600"></div>
+<div align=center><img src="figs/RasPiDetsV1-H-Simple.png" ></div>
 
 <a name="4.ACDO"></a>
 ## 4. ACDO algorithm for End-Edge-Could Collaboration
@@ -137,12 +158,19 @@ The number of categories of the 16 detected objects is shown in the following ta
 ## 7. STE for Audio Extraction
 
 ### 1) STE 
+We utilize the short-time energy method (STE) [18] to quickly extract effective audio signals, which can be formulated as
+$$
+    S(n) = \sum_{i=-\infty}^{\infty} x^2(n) \omega(n-i) = \sum_{i=n-M+1}^{n} x^2(i) \omega(n-1),
+$$
+where $n$ is the size of the window, $x(n)$ is input signals, $\omega(n)$ is a rectangular window function.
 
-<div align=center><img src="figs/ExAAD.jpg" width="600"></div>
+<div align=center><img src="figs/ExAAD.jpg" ></div>
+*Short-Term Energy method (STE) for extracting valid audio clips. The solid red line in the waveform of audio indicates where a valid segment begins, and the solid blue line indicates where it ends.*
 
 ### 2) Other Audio Anomaly Detection Algorithms
 
-<div align=center><img src="figs/ExAAD_Other.jpg" width="400"></div>
+Comparisons of different anomaly detection methods for extracting valid audio clips.
+<div align=center><img src="figs/ExAAD_Other.jpg" ></div>
 
 <a name="8.Loss"></a>
 ## 8. Loss Function
@@ -151,7 +179,7 @@ The number of categories of the 16 detected objects is shown in the following ta
 
 <div align=center><img src="figs/Ressgion.jpg" width="400"></div>
 
-<div align=center><img src="figs/LossCIoU.jpg" width="200"></div>
+<div align=center><img src="figs/LossCIoU.jpg" width="400"></div>
 
 <a name="9.Experiments"></a>
 ## 9. Experiments 
