@@ -26,13 +26,14 @@ Specifically, Audio Anomaly Detection (AAD) existed in Air Conditioner (AC) inte
 This greatly restricts the beat of the assembly line, which in turn leads to a reduction in production efficiency. 
 To solve this problem, we developed a lightweight PDD (RasPiDets) method with End-Edge-Cloud (EEC) collaboration to accelerate the detection speed of edge nodes.
 
-![FFPDD System](figs/PDD_Arch.jpg)
+![PDD System](figs/PDD_Arch.jpg)
 
 **The main contributions are summarized as follows:**
-  - An lightweight defect detection Network (RasPiDets) with cascaded U-Net architecture is proposed that can solve the different detection problems in a unified model.
-  - A lightweight PDD (RasPiDets) method system with end-edge-cloud collaboration are proposed to accelerate the detection speed of edge nodes, which realizes the plug-and-play of edge nodes while improving the detection speed.
-  - FFPDD offers a **1.2%** improvement in detection accuracy over current state-of-the-art (SOTA) models and an average **64%** reduction in detection time.
-  - Two PDD datasets of AC manufacturing (SDU-Haier-AQD and SDU-Haier-ND) are open sourced to accelerate related research progress.
+  - A novel lightweight defect detection model (RasPiDets) is specially designed for PDD tasks, which can run smoothly on the Raspberry Pi and realizes the plug-and-play of edge nodes. Impressively, the detection speed per round of RasPiDets (2.85 seconds) is reduced by {\bf 22\%} compared to advanced YOLOv7 (3.64 seconds) for the same conditions. **This ensures low-cost and rapid deployment of defect detection algorithms in industrial scenarios.**
+  - We propose two innovative modules for RasPiDets to ensure reduced detection time while maintaining high detection accuracy. Deep Cascade U-shaped Network (DCUN) can quickly extract rich multi-scale features, and Adaptive Multi-Scale Squeeze-and-Excitation (AMSE) facilitates multi-scale feature reuse and fusion. By integrating them, RasPiDets (98.24\%) outperforms YOLOv7 (97.50\%) by {\bf 0.74\%} in terms of the metric mAP@0.5. **This is particularly noteworthy because improvements in high-accuracy ranges are extremely challenging.**  
+  - This work utilizes end-edge-cloud resources as a holistic system in the field of defect detection, employing reinforcement learning algorithms (ACDO) for unified scheduling.  **The speed of the PDD task is reduced an average of 64\%} when using the proposed ACDO compared to other scheduling strategies.**
+  - The proposed methods offer a **1.2%** improvement in detection accuracy over current state-of-the-art (SOTA) models and an average **64%** reduction in detection time.
+  - **Two PDD datasets (SDU-Haier-AQD and SDU-Haier-ND) from AC manufacturing are open sourced**. This holds significant importance for accelerating the development and research of manufacturing industry.
 
 <a name="2.RasPiDets"></a>
 ## 2. RasPiDets
