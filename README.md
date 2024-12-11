@@ -12,7 +12,7 @@
 - [9.Experiments](#9.Experiments)
 - [10.Performance](#10.Performance)
 - [11.Visualization of detection results](#11.Vis_Results)
-
+- [12.Citation](#12.Cite)
 
 <a name="1.Introductiion"></a>
 ## 1. Introductiion
@@ -39,13 +39,15 @@ To solve this problem, we developed a lightweight PDD (RasPiDets) method with En
 
 Considering together with the \``where are the defects'' problem existing in image type, we propose a Easy-to-Deploy defect detection Network (RasPiDets) that can solve the \``what'' and \``where'' detection problems in a unified network. 
 
+<div align=center><img src="figs/RasPiDets_Arch.png", width="800"></div>
+
 **The innovations of RasPiDets include:** 
 - A cascaded U-Net architecture is designed to quickly obtain feature maps of various sizes; 
 - The lightweight deep architecture can be easily obtained by stacking U-Nets;
 - Numerous shortcut path is added between the feature maps in U-Nets to reduce model over-fitting；
 - RasPiDets is a lightweight network architecture that can be deployed on Raspberry Pi.
 
-<div align=center><img src="figs/RasPiDets_Arch.jpg", width="800"></div>
+<div align=center><img src="figs/compares.png", width="800"></div>
 
 In the following list, symbol $\checkmark$ represents advantages, and symbol $\times$ represents disadvantages.
 
@@ -62,10 +64,9 @@ In the following list, symbol $\checkmark$ represents advantages, and symbol $\t
   - $\times$ The network structure design is complex and there are numerous redundant features, which hinders its detection speed. In addition, the transfer of high-resolution features to later layers occurs at a slow pace, consequently leading to diminished detection accuracy for small target objects.
 
   4. **RasPiDets**: A lightweight model that can run smoothly on Raspberry Pi (RasPiDets) is good at solving the audio and image detection problems. 
-  - $\checkmark$  RasPiDets contains many efficient components, such as multiscale (MS), dense connections (DC), inverted modules (IM), MSFE and AMFF. 
+  - $\checkmark$  RasPiDets contains many efficient components, such as multiscale (MS), dense connections (DC), inverted modules (IM), MB Cascade and Adaptive MS. 
   These components are crucial for enhancing performance and speed.
-  - $\times$ The mAP of RasPiDets in specific categories is not uniformly optimal, such as in the categories of cyclone net. In addition, RasPiDets lacks the attention module's capacity for global feature modeling. 
-
+  - $\times$ The mAP of RasPiDets in specific categories is not uniformly optimal, such as in the categories of cyclone net.
 
 
 <a name="3.starting_instance"></a>
@@ -212,3 +213,7 @@ AAD and ADD tasks with 3 priorities reach the lowest delay at different time int
 
 <div align=center><img src="figs/Results.jpg" width="600"></div>
 
+<a name="12.Cite"></a>
+## 12. Citation
+
+Welcome to cite our paper. The infos of the paper will coming soon!
