@@ -11,7 +11,7 @@
 - [8.Loss Function](#8.Loss)
 - [9.Experiments](#9.Experiments)
 - [10.Performance](#10.Performance)
-- [11.Visualization of detection results](#11.Vis_Results)
+- [11.Visualization of Detection Results](#11.Vis_Results)
 - [12.Citation](#12.Cite)
 
 <a name="1.Introductiion"></a>
@@ -208,7 +208,7 @@ AAD and ADD tasks with 3 priorities reach the lowest delay at different time int
 <div align=center><img src="figs/EEC_Perform.jpg"></div>
 
 <a name="11.Vis_Results"></a>
-## 11. Visualization of detection results
+## 11. Visualization of Detection Results
 
 <div align=center><img src="figs/Results.jpg" width="600"></div>
 
