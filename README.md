@@ -161,9 +161,7 @@ The number of categories of the 16 detected objects is shown in the following ta
 
 ### 1) STE 
 We utilize the short-time energy method (STE) [18] to quickly extract effective audio signals, which can be formulated as
-$$
-    S(n) = \sum_{i=-\infty}^{\infty} x^2(n) \omega(n-i) = \sum_{i=n-M+1}^{n} x^2(i) \omega(n-1),
-$$
+$S(n) = \sum_{i=-\infty}^{\infty} x^2(n) \omega(n-i) = \sum_{i=n-M+1}^{n} x^2(i) \omega(n-1)$,
 where $n$ is the size of the window, $x(n)$ is input signals, $\omega(n)$ is a rectangular window function.
 
 <div align=center><img src="figs/ExAAD.jpg" width=""></div>
