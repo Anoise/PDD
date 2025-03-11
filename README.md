@@ -1,4 +1,6 @@
-# RasPiDets: A Real-Time Defect Detection Method with End-Edge-Cloud Collaboration
+# RasPiDets (Accepted)
+
+# Title: RasPiDets: A Real-Time Defect Detection Method with End-Edge-Cloud Collaboration
 
 # **Contents**
 - [1.Introductiion](#1.Introductiion)
