@@ -1,6 +1,6 @@
 # RasPiDets (IEEE TII Accepted)
 
-**RasPiDets: A Real-Time Defect Detection Method with End-Edge-Cloud Collaboration**
+**RasPiDets: A Quasi-Real-Time Defect Detection Method with End-Edge-Cloud Collaboration**
 
 # **Contents**
 - [1.Introductiion](#1.Introductiion)
