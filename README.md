@@ -220,5 +220,17 @@ AAD and ADD tasks with 3 priorities reach the lowest delay at different time int
 Welcome to cite our paper.
 
 
-Daojun Liang, Haixia Zhang, Qiaojian Han, Dongfeng Yuan and Minggao Zhang, "RasPiDets: A Quasi-Real-Time Defect Detection Method with End-Edge-Cloud Collaboration," in IEEE Transactions on Industrial Informatics, 2025, early access.
+D. Liang, H. Zhang, Q. Han, D. Yuan and M. Zhang, "RasPiDets: A Quasi-Real-Time Defect Detection Method With End-Edge-Cloud Collaboration," in IEEE Transactions on Industrial Informatics, vol. 21, no. 7, pp. 5525-5535, July 2025.
+
+```
+@article{liang2025RasPiDets,
+  author={Liang, Daojun and Zhang, Haixia and Han, Qiaojian and Yuan, Dongfeng and Zhang, Minggao},
+  journal={IEEE Transactions on Industrial Informatics}, 
+  title={RasPiDets: A Quasi-Real-Time Defect Detection Method With End-Edge-Cloud Collaboration}, 
+  year={2025},
+  volume={21},
+  number={7},
+  pages={5525-5535}
+}
+```
 
